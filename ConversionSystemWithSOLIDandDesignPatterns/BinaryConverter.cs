@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConversionSystemWithSOLIDandDesignPatterns
 {
-    public class BinaryConverter : Converter, IConverter
+    public class BinaryConverter : Converter, IBinaryConverter
     {
         public BinaryConverter(int decimalNumber)
         : base(decimalNumber)
@@ -34,14 +34,6 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
             return string.Join(" ",
             bytes.Select(byt => System.Convert.ToString(byt, 2).PadLeft(8,
             '0')));
-        }
-        public string HexadecimalToText(string text)
-        {
-            throw new NotImplementedException();
-        }
-        public string TextToHexadecimal(string text)
-        {
-            throw new NotImplementedException();
         }
     }
 }

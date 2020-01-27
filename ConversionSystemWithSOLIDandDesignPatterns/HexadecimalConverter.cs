@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConversionSystemWithSOLIDandDesignPatterns
 {
-    public class HexadecimalConverter : Converter, IConverter
+    public class HexadecimalConverter : Converter, IHexadecimalConverter
     {
         public HexadecimalConverter(int decimalNumber) : base(decimalNumber)
         { }
@@ -30,20 +30,6 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
             var hexString = BitConverter.ToString(bytes);
             hexString = hexString.Replace("-", "");
             return hexString;
-        }
-
-        // This method does not have implementation which means violate Liskove Substitution Principle.
-        // The solution is to apply Interface Segregation Principle.
-        public string TextToBinary(string text)
-        {
-            throw new NotImplementedException();
-        }
-
-        // This method does not have implementation which means violate Liskove Substitution Principle.
-        // The solution is to apply Interface Segregation Principle.
-        public string BinaryToText(string binary)
-        {
-            throw new NotImplementedException();
         }
     }
 }
