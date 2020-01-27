@@ -47,6 +47,7 @@
     <Compile Include="Converter.cs" />
     <Compile Include="ConverterFactory.cs" />
     <Compile Include="HexadecimalConverter.cs" />
+    <Compile Include="InvalidBaseConverter.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="NumberConverter.cs" />
     <Compile Include="OctalConverter.cs" />

@@ -9,7 +9,7 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
     // Apply Factory Design Pattern
     class ConverterFactory
     {
-        // Using Reflection with Factory Design Pattern and inversion of control
+
         public static Converter Create(BaseType baseType, int decimalNumber)
         {
             try
@@ -22,7 +22,9 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
             }
             catch (Exception)
             {
-                return null;
+                // Apply Null Object Design Pattern that serves Liskove Substitution Principle.
+                // because if exception arises, that violates Liskove Substitution Principle.
+                return new InvalidBaseConverter(decimalNumber);
             }
         }
     }
