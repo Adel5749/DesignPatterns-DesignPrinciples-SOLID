@@ -9,21 +9,18 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
     // Apply Factory Design Pattern
     class ConverterFactory
     {
+        // Using Reflection with Factory Design Pattern and inversion of control
         public static Converter Create(BaseType baseType, int decimalNumber)
         {
-            if (baseType == BaseType.Binary)
+            try
             {
-                return new BinaryConverter(decimalNumber);
+                return (
+              Converter)
+              Activator.CreateInstance(
+              Type.GetType($"SolidSample.{baseType.ToString()}Converter"),
+              new object[] { decimalNumber });
             }
-            else if (baseType == BaseType.Octal)
-            {
-                return new OctalConverter(decimalNumber);
-            }
-            else if (baseType == BaseType.Hexadecimal)
-            {
-                return new HexadecimalConverter(decimalNumber);
-            }
-            else
+            catch (Exception)
             {
                 return null;
             }

@@ -25,30 +25,10 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
             Logger.Log("Program is starting...");
             Logger.Log("Enter the number to convert:");
             DecimalNumber = Reader.ReadInteger();
-            Logger.Log("Enter the base type (Ex: 2,8, 16):");
+            Logger.Log("Enter the base type (Ex: 2,8):");
             var baseType = (BaseType)Reader.ReadInteger();
-            string result = String.Empty;
-
-            // After applying Open-Closed principle (Open for extension and closed for modification)
-            switch (baseType)
-            {
-                case BaseType.Binary:
-                    var binaryConverter = new BinaryConverter(DecimalNumber);
-                    result = binaryConverter.Convert();
-                    break;
-                case BaseType.Octal:
-                    var octalConverter = new OctalConverter(DecimalNumber);
-                    result = octalConverter.Convert();
-                    break;
-                case BaseType.Hexadecimal:
-                    var hexadecimalConverter = new
-                    HexadecimalConverter(DecimalNumber);
-                    result = hexadecimalConverter.Convert();
-                    break;
-                default:
-                    result = "No base found!";
-                    break;
-            }
+            var type = ConverterFactory.Create(Base, DecimalNumber);
+            string result = type.Convert();
             Logger.Log(result);
             Logger.Log("Program is ending..");
         }
