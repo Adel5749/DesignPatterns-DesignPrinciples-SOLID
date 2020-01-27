@@ -10,12 +10,11 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
     {
         Binary = 2,
         Octal = 8,
+        Hexadecimal = 16,
         None = 0
     }
 
-
-    // this class do multiple responsibilities logging, reading and converting
-    // So, we need to apply Single Responsibility principle.
+    
     class NumberConverter
     {
         public int DecimalNumber { get; set; }
@@ -29,6 +28,8 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
             Logger.Log("Enter the base type (Ex: 2,8):");
             var baseType = (BaseType)Reader.ReadInteger();
             string result = String.Empty;
+
+            // Adding new feature (Hexadecimal) without using Open-Closed Principle.
             switch (baseType)
             {
                 case BaseType.Binary:
@@ -36,6 +37,9 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
                     break;
                 case BaseType.Octal:
                     result = System.Convert.ToString(DecimalNumber, 8);
+                    break;
+                case BaseType.Hexadecimal:
+                    result = DecimalNumber.ToString("X");
                     break;
                 default:
                     result = "No base found!";
