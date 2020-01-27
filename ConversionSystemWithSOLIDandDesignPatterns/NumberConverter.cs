@@ -13,6 +13,9 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
         None = 0
     }
 
+
+    // this class do multiple responsibilities logging, reading and converting
+    // So, we need to apply Single Responsibility principle.
     class NumberConverter
     {
         public int DecimalNumber { get; set; }
