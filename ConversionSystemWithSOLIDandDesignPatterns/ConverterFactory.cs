@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConversionSystemWithSOLIDandDesignPatterns
 {
-    // Apply Factory Design Pattern
     class ConverterFactory
     {
 
@@ -22,8 +21,6 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
             }
             catch (Exception)
             {
-                // Apply Null Object Design Pattern that serves Liskove Substitution Principle.
-                // because if exception arises, that violates Liskove Substitution Principle.
                 return new InvalidBaseConverter(decimalNumber);
             }
         }

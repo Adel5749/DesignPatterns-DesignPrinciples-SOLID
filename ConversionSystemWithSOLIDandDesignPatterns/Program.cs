@@ -10,7 +10,12 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
     {
         static void Main(string[] args)
         {
-            NumberConverter converter = new NumberConverter();
+            var consoleLogger = new Logger();
+
+            var converter = new NumberConverter(new TextFileLogger(),
+                                                new Reader(consoleLogger),
+                                                consoleLogger);
+
             converter.Convert();
         }
     }

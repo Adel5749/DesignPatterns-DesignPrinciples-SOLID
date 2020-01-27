@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConversionSystemWithSOLIDandDesignPatterns
 {
-    public class Logger : ILogger
+    public interface ILogger
     {
-        public void Log(string message)
-        {
-            Console.WriteLine(message);
-        }
+        void Log(string message);
     }
 }

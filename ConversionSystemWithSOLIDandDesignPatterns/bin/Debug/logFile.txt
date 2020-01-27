@@ -1,0 +1,30 @@
+Program is starting...
+The number to convert is: 22
+The selected base type is: Binary
+using the converter: ConversionSystemWithSOLIDandDesignPatterns.InvalidBaseConverter
+The result is: This base type is not a valid base. 
+Program is ending..
+Program is starting...
+The number to convert is: 22
+Program is starting...
+The number to convert is: 22
+The selected base type is: Binary
+using the converter: ConversionSystemWithSOLIDandDesignPatterns.InvalidBaseConverter
+The result is: This base type is not a valid base. 
+Program is ending..
+Program is starting...
+The number to convert is: 22
+The selected base type is: Binary
+using the converter: ConversionSystemWithSOLIDandDesignPatterns.InvalidBaseConverter
+The result is: This base type is not a valid base. 
+Program is ending..
+Program is starting...
+Program is starting...
+The number to convert is: 22
+The selected base type is: Binary
+Program is starting...
+The number to convert is: 30
+The selected base type is: Hexadecimal
+using the converter: ConversionSystemWithSOLIDandDesignPatterns.InvalidBaseConverter
+The result is: This base type is not a valid base. 
+Program is ending..
