@@ -14,16 +14,17 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
     }
 
     class NumberConverter
-    { 
+    {
         public int DecimalNumber { get; set; }
-
+        public Logger Logger { get; set; } = new Logger();
+        public Reader Reader { get; set; } = new Reader();
         public void Convert()
         {
-            Console.WriteLine("Program is starting...");
-            Console.WriteLine("Enter the number to convert:");
-            DecimalNumber = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the base type (Ex: 2,8):");
-            var baseType = (BaseType)int.Parse(Console.ReadLine());
+            Logger.Log("Program is starting...");
+            Logger.Log("Enter the number to convert:");
+            DecimalNumber = Reader.ReadInteger();
+            Logger.Log("Enter the base type (Ex: 2,8):");
+            var baseType = (BaseType)Reader.ReadInteger();
             string result = String.Empty;
             switch (baseType)
             {
@@ -37,8 +38,8 @@ namespace ConversionSystemWithSOLIDandDesignPatterns
                     result = "No base found!";
                     break;
             }
-            Console.WriteLine($"The result is: {result} ");
-            Console.WriteLine("Program is ending..");
+            Logger.Log("The result is: "+ result);
+            Logger.Log("Program is ending..");
         }
     }
 }
